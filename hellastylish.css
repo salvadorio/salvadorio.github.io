@@ -1,13 +1,112 @@
 body {
-    background-color: #191228;
-  }
+  background-color: #191228;
+}
+
+* {
+  color: white;
+
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 100;
+}
+
+h2 {
+  font-style: italic;
+}
+h3 {
+  font-style: italic;
+}
+.projectimgs {
+  margin:10px;
+}
+.projects {
+  display:flex;
+  flex-direction: column;
+  border: 1px solid white;
+  padding: 30px;
+  margin:10px;
+  width:50%;
+}
+.horisplitter {
+  display: flex;
+  justify-content: space-between;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid white;
+  padding: 30px;
+  margin:10px;
+}
+.stuffmade {
+  border: 1px solid white;
+  padding: 30px;
+  margin:10px;
+}
+.randomText {
+  white-space: pre-wrap;
+  text-align: center;
+  border: 1px solid white;
+  padding: 30px;
+  margin:10px;
+}
+.aboutMe{
+  display: flex;
   
-  h1 {
-    color: white;
-    text-align: center;
-  }
-  
-  p {
-    font-family: verdana;
-    font-size: 20px;
-  }
+}
+.container {
+  position: relative;
+
+}
+.faderText {
+
+  font-size: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #191228;
+  margin:5px;
+
+}
+.container:hover .overlay {
+  opacity: .9;
+}
+.aboutMeText {
+  border: 1px solid white;
+  padding: 30px;
+  margin:10px;
+  min-width: 30%;
+  max-width: 60%;
+}
+.aboutMeImages {
+  border: 1px solid white;
+  padding: 30px;
+  margin:10px;
+  display: flex;
+  flex-direction: row;
+}
+img {
+
+  max-width: 100%;
+  height: auto;
+}
+
+svg {
+  max-width: 100%;
+  height: auto;
+}
