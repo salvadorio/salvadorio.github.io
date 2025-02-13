@@ -32,6 +32,8 @@ const quotes = [
     "do you ever wonder\nwhy everyone is out to get you every day\nand every night\nor do you question anything\nhow many warning signs til it hits you darling\ngravity's your friend",
     "it's as hard as it looks, sometimes\nthat's as far as it gets sometimes"]
 
+/* https://stackoverflow.com/questions/53051359/javascript-random-quote-generator-how-to-have-quote-appear-as-page-first-loads */
+/* https://stackoverflow.com/questions/6840326/how-can-i-create-and-style-a-div-using-javascript */
 function forFunProjects(){
     var arr = ['blenderwallpaper.png', 'visualmusicmixer.png', 'goghembroidery.png','guitar.png', "midi.png"];
     var descriptions = ["i made a wallpaper for my computer in blender with clickable sign app icons",

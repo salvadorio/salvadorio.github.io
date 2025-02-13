@@ -2,6 +2,8 @@ body {
   background-color: #191228;
 }
 
+/* https://www.youtube.com/watch?v=phWxA89Dy94 used this for flex boxes*/
+
 * {
   color: white;
 
@@ -58,6 +60,8 @@ h3 {
 
 }
 .faderText {
+
+  /* pretty copied from w3schools */
 
   font-size: 15px;
   position: absolute;
