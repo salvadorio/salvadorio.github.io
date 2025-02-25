@@ -42,31 +42,30 @@ function forFunProjects(){
         "i built a guitar at my local makerspace, with resin and wisteria flowers in the cavities",
         "i made a midi controller with arduino to talk to my chase bliss mood mkii"
     ]
-    while (true) {
+    
 
-        var container = document.createElement("div")
-        container.className = "container"
-        var num = 1
-        var img = document.createElement("img");
-        img.src = "imgs/projectPreviewImg/"+arr[num]
-        var src=document.getElementById("jank")
-        var overlay = document.createElement("div")
-        var text = document.createElement("div")
-        text.className = "faderText"
-        
-        var str = descriptions[num]
-        text.textContent = str
-        overlay.className = "overlay"
-        img.style.margin = "5px"
-        src.appendChild(container)
-        container.appendChild(img)
-        container.appendChild(overlay)
-        overlay.appendChild(text)
+    var container = document.createElement("div")
+    container.className = "container"
+    var num = 1
+    var img = document.createElement("img");
+    img.src = "imgs/projectPreviewImg/"+arr[num]
+    var src=document.getElementById("jank")
+    var overlay = document.createElement("div")
+    var text = document.createElement("div")
+    text.className = "faderText"
+    
+    var str = descriptions[num]
+    text.textContent = str
+    overlay.className = "overlay"
+    img.style.margin = "5px"
+    src.appendChild(container)
+    container.appendChild(img)
+    container.appendChild(overlay)
+    overlay.appendChild(text)
 
-        arr.splice(num,1)
-        descriptions.splice(num,1)
-        break;
-    }
+    arr.splice(num,1)
+    descriptions.splice(num,1)
+
     for (let i = 0; 0 < arr.length; i++) {
         var container = document.createElement("div")
         container.className = "container"
@@ -104,6 +103,12 @@ function forClassProjects(){
         var container = document.createElement("div")
         container.className = "container"
         var num = Math.floor(Math.random() * arr.length);
+
+        var hyperlink = document.createElement("a")
+
+        hyperlink.href = arr[num].split(".")[0] + ".html"
+
+        
         var img = document.createElement("img");
         img.src = "imgs/classwork/"+arr[num]
         var src=document.getElementById("forclass" + String(i%2))
@@ -116,8 +121,9 @@ function forClassProjects(){
         overlay.className = "overlay"
         img.style.margin = "5px"
         src.appendChild(container)
-        container.appendChild(img)
-        container.appendChild(overlay)
+        container.appendChild(hyperlink)
+        hyperlink.appendChild(img)
+        hyperlink.appendChild(overlay)
         overlay.appendChild(text)
 
         arr.splice(num,1)
