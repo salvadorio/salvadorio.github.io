@@ -39,6 +39,15 @@ h3 {
   padding: 30px;
   margin:10px;
 }
+
+.back {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid white;
+  padding: 10px;
+  margin:10px;
+}
+
 .stuffmade {
   border: 1px solid white;
   padding: 30px;
@@ -89,6 +98,7 @@ h3 {
 }
 .container:hover .overlay {
   opacity: .9;
+
 }
 .aboutMeText {
   border: 1px solid white;
