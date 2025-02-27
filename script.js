@@ -39,13 +39,13 @@ const quotes = [
 class hoverableImage {
     constructor(imgFile, imgText = "", hyperlink = ""){
         this.imgFile = imgFile
-        // if (imgText == "") {
-        //     this.imgText = imgFile.split("/")[0]
-        // } else {
-        //     
-        // }
+        if (imgText == "") {
+            this.imgText = imgFile.split("/")[2].split(".")[0]
+        } else {
+            this.imgText = imgText
+        }
         
-        this.imgText = imgText
+        
         this.hyperlink = hyperlink
     }
 
@@ -170,45 +170,6 @@ function randomImage() {
         var src=document.getElementById("imageCol"+String(i%3))
         imgs[i].render(src)
     }
-
-    // for (let i = 0; i < 3; i++) {
-    //     var div = document.createElement("div");
-    //     div.id = "imageCol" + i
-    //     div.style.flexDirection = "column"
-    //     div.style.margin = "5px"
-    //     var src=document.getElementById("aboutMeImages")
-    //     src.appendChild(div)
-
-    //     let space = 4
-
-    //     while (space > 0) {
-
-    //         var container = document.createElement("div")
-    //         container.className = "container"
-    //         var num = Math.floor(Math.random() * imagesArray.length);
-    //         var img = document.createElement("img");
-    //         img.src = "imgs/ofme/"+imagesArray[num]
-    //         var src=document.getElementById("imageCol"+i)
-    //         var overlay = document.createElement("div")
-    //         var text = document.createElement("div")
-    //         text.className = "faderText"
-            
-    //         var str = imagesArray[num]
-    //         str = str.substring(0, str.length - 4);
-    //         text.textContent = str
-    //         overlay.className = "overlay"
-    //         img.max_width = "auto"
-    //         img.max_height = 150
-    //         img.style.margin = "5px"
-    //         src.appendChild(container)
-    //         container.appendChild(img)
-    //         container.appendChild(overlay)
-    //         overlay.appendChild(text)
-    //         imagesArray.splice(num,1)
-            
-    //         space -= 1
-    //     }
-    // }
 
 }
 
