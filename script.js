@@ -34,6 +34,63 @@ const quotes = [
 
 /* https://stackoverflow.com/questions/53051359/javascript-random-quote-generator-how-to-have-quote-appear-as-page-first-loads */
 /* https://stackoverflow.com/questions/6840326/how-can-i-create-and-style-a-div-using-javascript */
+
+
+class hoverableImage {
+    constructor(imgFile, imgText = "", hyperlink = ""){
+        this.imgFile = imgFile
+        // if (imgText == "") {
+        //     this.imgText = imgFile.split("/")[0]
+        // } else {
+        //     
+        // }
+        
+        this.imgText = imgText
+        this.hyperlink = hyperlink
+    }
+
+    render(parent) {
+        var container = document.createElement("div")
+        container.className = "container"
+    
+        var hyperlink = document.createElement("a")
+        hyperlink.href = this.hyperlink
+        
+        var img = document.createElement("img");
+        img.src = this.imgFile
+
+        var overlay = document.createElement("div")
+        var text = document.createElement("div")
+        text.className = "faderText"
+        var str = this.imgText
+        text.textContent = str
+        overlay.className = "overlay"
+        img.style.margin = "5px"
+        
+        parent.appendChild(container)
+        container.appendChild(hyperlink)
+        hyperlink.appendChild(img)
+        hyperlink.appendChild(overlay)
+        overlay.appendChild(text)
+    }
+}
+
+function shuffle(array) {
+    let currentIndex = array.length;
+  
+    // While there remain elements to shuffle...
+    while (currentIndex != 0) {
+  
+      // Pick a remaining element...
+      let randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex--;
+  
+      // And swap it with the current element.
+      [array[currentIndex], array[randomIndex]] = [
+        array[randomIndex], array[currentIndex]];
+    }
+  }
+
 function forFunProjects(){
     var arr = ['blenderwallpaper.png', 'visualmusicmixer.png', 'goghembroidery.png','guitar.png', "midi.png"];
     var descriptions = ["i made a wallpaper for my computer in blender with clickable sign app icons",
@@ -43,52 +100,28 @@ function forFunProjects(){
         "i made a midi controller with arduino to talk to my chase bliss mood mkii"
     ]
     
-
-    var container = document.createElement("div")
-    container.className = "container"
-    var num = 1
-    var img = document.createElement("img");
-    img.src = "imgs/projectPreviewImg/"+arr[num]
-    var src=document.getElementById("jank")
-    var overlay = document.createElement("div")
-    var text = document.createElement("div")
-    text.className = "faderText"
+    var blender = new hoverableImage('imgs/projectPreviewImg/blenderwallpaper.png',"i made a wallpaper for my computer in blender with clickable sign app icons")
+    var mixer = new hoverableImage('imgs/projectPreviewImg/visualmusicmixer.png', "i wrote this program to record, mix, and edit together a bunch of recordings of me playing music", "https://www.youtube.com/watch?v=0yt8WVD2njI")
+    var emb = new hoverableImage('imgs/projectPreviewImg/goghembroidery.png', "i wrote some code to analyze brush strokes of Starry Night and output embroidery machine code")
+    var guitar = new hoverableImage('imgs/projectPreviewImg/guitar.png',"i built a guitar at my local makerspace, with resin and wisteria flowers in the cavities" )
+    var midi = new hoverableImage('imgs/projectPreviewImg/midi.png', "i made a midi controller with arduino to talk to my chase bliss mood mkii")
     
-    var str = descriptions[num]
-    text.textContent = str
-    overlay.className = "overlay"
-    img.style.margin = "5px"
-    src.appendChild(container)
-    container.appendChild(img)
-    container.appendChild(overlay)
-    overlay.appendChild(text)
+    var src = document.getElementById("jank")
 
-    arr.splice(num,1)
-    descriptions.splice(num,1)
 
-    for (let i = 0; 0 < arr.length; i++) {
-        var container = document.createElement("div")
-        container.className = "container"
-        var num = Math.floor(Math.random() * arr.length);
-        var img = document.createElement("img");
-        img.src = "imgs/projectPreviewImg/"+arr[num]
+    // whole width
+    mixer.render(src);
+    blender.render(src);
+
+    var halfsies = [emb, guitar, midi];
+
+    //shuffle(halfsies)
+
+    for (let i = 0; i < halfsies.length; i++) {
         var src=document.getElementById("forfun" + String(i%2))
-        var overlay = document.createElement("div")
-        var text = document.createElement("div")
-        text.className = "faderText"
-        
-        var str = descriptions[num]
-        text.textContent = str
-        overlay.className = "overlay"
-        img.style.margin = "5px"
-        src.appendChild(container)
-        container.appendChild(img)
-        container.appendChild(overlay)
-        overlay.appendChild(text)
-
-        arr.splice(num,1)
-        descriptions.splice(num,1)
+        halfsies[i].render(src)
     }
+
 }
 
 function forClassProjects(){
@@ -99,40 +132,31 @@ function forClassProjects(){
         "used p5js to generate Sol Lewitt's wall drawing 65"
     ]
 
-    for (let i = 0; 0 < arr.length; i++) {
-        var container = document.createElement("div")
-        container.className = "container"
-        var num = Math.floor(Math.random() * arr.length);
+    var schoolProjects = [];
 
-        var hyperlink = document.createElement("a")
-
-        hyperlink.href = arr[num].split(".")[0] + ".html"
-
-        
-        var img = document.createElement("img");
-        img.src = "imgs/classwork/"+arr[num]
-        var src=document.getElementById("forclass" + String(i%2))
-        var overlay = document.createElement("div")
-        var text = document.createElement("div")
-        text.className = "faderText"
-        
-        var str = descriptions[num]
-        text.textContent = str
-        overlay.className = "overlay"
-        img.style.margin = "5px"
-        src.appendChild(container)
-        container.appendChild(hyperlink)
-        hyperlink.appendChild(img)
-        hyperlink.appendChild(overlay)
-        overlay.appendChild(text)
-
-        arr.splice(num,1)
-        descriptions.splice(num,1)
+    for (let i = 0; i < arr.length; i++) {
+        schoolProjects.push(new hoverableImage("imgs/classwork/"+arr[i], descriptions[i], (arr[i].split(".")[0] + ".html")))
     }
+
+
+    shuffle(schoolProjects);
+    for (let i = 0; i < schoolProjects.length; i++) {
+        var src=document.getElementById("forclass" + String(i%2))
+        schoolProjects[i].render(src)
+    }
+    
 }
 
 function randomImage() {
     var imagesArray = ['triceps.png', 'themet.png', 'band.png', 'rocksie.png', 'sleepydog.png', 'prom.png', '3dprinting.png', 'guitarshop.png', 'pantssewn.png', 'screenshot.png', 'mirrorpic.png', 'sleepy.png', 'beach.png', 'rocksieface.png', 'haloween.png', 'omurice.png', 'riley.png', 'nature.png', 'portugalguitar.png', 'newyork.png', 'profile.png', 'youngsalvadordemeanor.png', 'doglap.png', 'guitar.png', 'running.png', 'studyhall.png', 'barbie_outfit.png', 'kindergarten.png', 'ohno.png', 'formaldrip.png']
+    
+    var imgs = [];
+
+    for (let i = 0; i < imagesArray.length; i++) {
+        imgs.push(new hoverableImage("imgs/ofme/"+imagesArray[i]))
+    }
+    shuffle(imgs);
+
     for (let i = 0; i < 3; i++) {
         var div = document.createElement("div");
         div.id = "imageCol" + i
@@ -140,37 +164,51 @@ function randomImage() {
         div.style.margin = "5px"
         var src=document.getElementById("aboutMeImages")
         src.appendChild(div)
-
-        let space = 4
-
-        while (space > 0) {
-
-            var container = document.createElement("div")
-            container.className = "container"
-            var num = Math.floor(Math.random() * imagesArray.length);
-            var img = document.createElement("img");
-            img.src = "imgs/ofme/"+imagesArray[num]
-            var src=document.getElementById("imageCol"+i)
-            var overlay = document.createElement("div")
-            var text = document.createElement("div")
-            text.className = "faderText"
-            
-            var str = imagesArray[num]
-            str = str.substring(0, str.length - 4);
-            text.textContent = str
-            overlay.className = "overlay"
-            img.max_width = "auto"
-            img.max_height = 150
-            img.style.margin = "5px"
-            src.appendChild(container)
-            container.appendChild(img)
-            container.appendChild(overlay)
-            overlay.appendChild(text)
-            imagesArray.splice(num,1)
-            
-            space -= 1
-        }
     }
+
+    for (let i = 0; i < 12; i++) {
+        var src=document.getElementById("imageCol"+String(i%3))
+        imgs[i].render(src)
+    }
+
+    // for (let i = 0; i < 3; i++) {
+    //     var div = document.createElement("div");
+    //     div.id = "imageCol" + i
+    //     div.style.flexDirection = "column"
+    //     div.style.margin = "5px"
+    //     var src=document.getElementById("aboutMeImages")
+    //     src.appendChild(div)
+
+    //     let space = 4
+
+    //     while (space > 0) {
+
+    //         var container = document.createElement("div")
+    //         container.className = "container"
+    //         var num = Math.floor(Math.random() * imagesArray.length);
+    //         var img = document.createElement("img");
+    //         img.src = "imgs/ofme/"+imagesArray[num]
+    //         var src=document.getElementById("imageCol"+i)
+    //         var overlay = document.createElement("div")
+    //         var text = document.createElement("div")
+    //         text.className = "faderText"
+            
+    //         var str = imagesArray[num]
+    //         str = str.substring(0, str.length - 4);
+    //         text.textContent = str
+    //         overlay.className = "overlay"
+    //         img.max_width = "auto"
+    //         img.max_height = 150
+    //         img.style.margin = "5px"
+    //         src.appendChild(container)
+    //         container.appendChild(img)
+    //         container.appendChild(overlay)
+    //         overlay.appendChild(text)
+    //         imagesArray.splice(num,1)
+            
+    //         space -= 1
+    //     }
+    // }
 
 }
 
