@@ -20,13 +20,47 @@ h3 {
 .projectimgs {
   margin:10px;
 }
+
+p {
+  margin:10px;
+}
+
+.projectTitle {
+  border: 1px solid white;
+  padding: 30px;
+  margin:10px;
+}
+.sol { 
+  min-width: 500px;
+  min-height: 550px;
+  margin:10px;
+}
+.synth {
+  min-width: 600px;
+  min-height: 750px;
+  margin:10px;
+}
 .projects {
   display:flex;
   flex-direction: column;
   border: 1px solid white;
   padding: 30px;
   margin:10px;
-  width:50%;
+
+}
+.synthEmbed {
+  display:flex;
+  flex-direction: row;
+  border: 1px solid white;
+  padding: 30px;
+  margin:10px;
+}
+.solEmbed {
+  display:flex;
+  flex-direction: row;
+  border: 1px solid white;
+  padding: 30px;
+  margin:10px;
 }
 .horisplitter {
   display: flex;

@@ -92,7 +92,7 @@ function forFunProjects(){
 }
 
 function forClassProjects(){
-    var arr = ['synth.png', 'rpsrect.png', 'projection.png', 'wall drawing.png'];
+    var arr = ['synth.png', 'rpsrect.png', 'projection.png', 'wall-drawing.png'];
     var descriptions = ["i made this tool where you can add modify synthesizers that all follow a global tempo, key, and chord structure",
         "i designed a rock-paper-scissors app in Figma",
         "Sam and i played with projection mapping using openCV to create feedback loops from user input",
