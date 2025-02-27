@@ -18,7 +18,12 @@ h3 {
   font-style: italic;
 }
 .projectimgs {
+  display: flex;
+  flex-direction: column;
+  column-gap: 20px;
+  justify-content: space-between;
   margin:10px;
+  column-gap: 30px;
 }
 
 p {
@@ -65,6 +70,14 @@ p {
 .horisplitter {
   display: flex;
   justify-content: space-between;
+}
+.hori {
+  
+  margin:20px;
+  border:20px;
+  gap: 20px;
+  display:flex;
+  justify-content: start;
 }
 .menu {
   display: flex;

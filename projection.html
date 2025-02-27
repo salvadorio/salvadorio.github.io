@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="hellastylish.css">
+<title>hey there !</title>
+</head>
+<body>
+
+    <div class="back">
+        <h2>
+            <a href="index.html"> &lt;--- back to main page</a>
+            
+        </h2>
+    </div>
+
+    <div class="projectTitle">
+        <h1>
+            Yoshi Sodeoka inspired Projection Mapping
+        </h1>
+        <h5>
+            &nbsp;&nbsp;&nbsp;&nbsp; w/ Prof. Lauren Petty
+        </h5>
+    </div>
+
+    <div class="solEmbed">
+        
+        <div class="projectimgs">
+            <p>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                
+                For this project, I worked with Sam to make something inspired by the work of Yoshi Sodeoka. She took pictures of DUMBO and edited them,
+                and I wrote python code to calibrate a random webcam to watch the output of a projector. When someone passes in front of the projection, the webcam 
+                would detect motion and a location using OpenCV and distort that area of the projected image. This would have 2 different trippy feedback-loop effects.
+                There was some complicated pixel bitwise operation stuff going on layered with mask erosion, but also, any lasting impact you would have on the projection
+                would create more movement after you're done, and more movment detected would cause more distortion, to an extent we calibrated. I generally really like image 
+                processing stuff, so it was a fun project. 
+            </p>
+            <div class="hori">
+                <video width="400" controls autoplay loop>
+                    <source src="imgs/thresh.mov" type="video/mp4">
+                </video>
+                <p>This is the OpenCV motion sensing layer. I really like how my hair looks. </p>
+            </div>
+            <div class="hori">
+                <video width="400" controls autoplay loop>
+                    <source src="imgs/feedbackloop.mov" type="video/mp4">
+                </video>
+                <p>This is, like, a visual reverby effect that is the basis of the feedback loop that comes from the camera seeing the projector and the projector mirroring the camera.</p>
+    
+            </div>
+            <div class="hori">
+                <video width="400" controls autoplay loop>
+                    <source src="imgs/finalizeddistortions.mov" type="video/mp4">
+                </video>
+                <p> This is how the image output was distorted by movement, without the eventual visual feedback loop of "watching" itself.</p>
+    
+            </div>
+            <div class="hori">
+                
+                <video width="400" controls autoplay loop>
+                    <source src="imgs/Timelapse.mov" type="video/mp4">
+                </video>
+                <p> Little work timelapse, thanks to Sam and the 370 Jay St. Media Commons.</p>
+
+            </div>
+            
+            <div class="hori">
+                <video width="400" controls autoplay loop>
+                    <source src="imgs/ProjectionSilly2.MOV" type="video/mp4">
+                </video>
+                <p> This is a cool effect we found, not really sure why it did this, and any of my guesses would take too long to write out.
+                    When watched as a time lapse, it's even crazier because there's this very slow consistent rotation pattern to the "teeth" at the top. 
+                </p>
+            </div>
+           
+        </div>
+        
+
+    </div>
+
+
+</body>
+</html>
+
