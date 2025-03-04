@@ -1,0 +1,30 @@
+.bgim {
+    width:100%;
+    height:auto;
+    position:relative;
+}
+.fixed {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+
+    border:solid;
+
+    z-index: 10;
+    grid-area: 1/1;
+}
+.fgim {
+  position: sticky; 
+  width:50%;
+  height:auto;
+  margin-left: 25%;
+  margin-right: 25%;
+  top:0;
+  z-index: 10;
+  margin-top: 25%;
+}
+
+main {
+    position:relative;
+}

@@ -35,6 +35,14 @@ p {
   padding: 30px;
   margin:10px;
   display:flex;
+
+  
+}
+.vertmenu {
+  border: 1px solid white;
+  padding: 30px;
+  margin:10px;
+  display:flex;
   flex-direction: column;
   
 }
@@ -82,7 +90,16 @@ details > summary {
 }
 details > p {
   padding: 10px;
-  width:30%;
+}
+
+.pedalboardimg {
+
+  max-width: 700px;
+
+  object-fit: contain;
+  width:auto;
+  height:auto;
+
 }
 .horisplitter {
   display: flex;
@@ -98,6 +115,8 @@ details > p {
   border: 1px solid white;
   padding: 30px;
   margin:10px;
+  width:auto;
+  flex-grow: 1;
 }
 .vertpedalstack {
   display:flex;
@@ -113,6 +132,15 @@ details > p {
 }
 .menu {
   display: flex;
+  justify-content: space-between;
+  border: 1px solid white;
+  padding: 30px;
+  margin:10px;
+}
+
+.stacker {
+  display: flex;
+  flex-wrap:wrap;
   justify-content: space-between;
   border: 1px solid white;
   padding: 30px;
