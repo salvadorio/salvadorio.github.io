@@ -21,12 +21,7 @@ vx = 0.3
 vy = 0.2
 let start;
 
-function step(timestamp) {
-    
-    if (start === undefined) {
-        start = timestamp;
-    }
-    const elapsed = timestamp - start;
+function step() {
 
     // Math.min() is used here to make sure the element stops at exactly 200px
 
@@ -45,7 +40,7 @@ function step(timestamp) {
         vy *= -1;
     }
     
-    console.log(String(cx) + "vh " + String(cy) + "vh")
+
 
     requestAnimationFrame(step);
     
