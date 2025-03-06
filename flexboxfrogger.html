@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="favicon_io/favicon.ico" type="image/x-icon" rel="icon" />
+    <link rel="stylesheet" href="hellastylish.css">
+    <script src="game.js"></script> 
+<title>hey there !</title>
+</head>
+<body>
+
+    <div class="back">
+        <h2>
+            <a href="index.html"> &lt;--- back to main page</a>
+            
+        </h2>
+    </div>
+
+    <div class="vertmenu">
+        
+        <h1>
+            flexbox frogger
+        </h1>
+        <div class="game">
+            
+            <div class="selectstack">
+                <select name="flex-direction" id="flex-direction-select" onchange="toggleFlex()">
+                    <option value="row">row</option>
+                    <option value="row-reverse">row-reverse</option>
+                    <option value="column">column</option>
+                    <option value="column-reverse">column-reverse</option>
+                </select>
+                <select name="justify-content" id="justify-content-select" onchange="toggleFlex()">
+                    <option value="flex-start">flex-start</option>
+                    <option value="flex-end">flex-end</option>
+                    <option value="center">center</option>
+                    <option value="space-between">space-between</option>
+                    <option value="space-around">space-around</option>
+                    <option value="space-evenly">space-between</option>
+                </select>
+            </div>
+            <div class="gameboard" id="board">
+                <img class="freakyfrog" src="imgs/freakyfrog.jpg">
+                <img class = "car" id="car" src="imgs/car.png">
+            </div>
+        </div>
+        
+
+    </div>
+
+
+</body>
+</html>
+

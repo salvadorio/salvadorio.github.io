@@ -232,3 +232,38 @@ svg {
   max-width: 100%;
   height: auto;
 }
+
+.game {
+  display: flex;
+  flex-wrap:wrap;
+}
+.freakyfrog {
+  width:15vh;
+  height:15vh;
+  object-fit: cover;
+  border-radius: 1vh;
+}
+.gameboard {
+  width:80vh;
+  height:80vh;
+  border: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  margin:20px;
+}
+
+select {
+
+  background-color: #191228;
+
+  border-color: white;
+
+}
+
+.car { 
+  position: absolute;
+  width:25vh;
+  height:15vh;
+  object-fit: cover;
+  border-radius: 1vh;
+}
