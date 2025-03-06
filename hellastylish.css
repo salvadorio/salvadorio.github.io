@@ -9,6 +9,7 @@ body {
 
   font-family: 'Courier New', Courier, monospace;
   font-weight: 100;
+  border-radius: 2vh;
 }
 
 h2 {
