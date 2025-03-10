@@ -180,6 +180,20 @@ function newQuote() {
     document.getElementById('randq').innerHTML = quotes[randomNumber] + "\n";
 }
 
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+    
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+        document.getElementById("stickyhead").style.height = "20vh";
+        document.getElementById("stickyhead").style.paddingTop = "4px"
+
+    } else {
+        document.getElementById("stickyhead").style.height = "40vh";
+        document.getElementById("stickyhead").style.paddingTop = "15px";
+
+    }
+} 
 
 
 newQuote()
