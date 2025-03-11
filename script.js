@@ -184,7 +184,7 @@ window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
     
-    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
         document.getElementById("stickyhead").style.height = "20vh";
         document.getElementById("stickyhead").style.paddingTop = "4px"
 
