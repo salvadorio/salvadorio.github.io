@@ -29,7 +29,7 @@ const quotes = [
     "two million miles a minute\nheaded for certain destruction",
     "the higher-ups will tell you what you can't eat\nwhere you can't go\nhow to dress\nhow to act decent",
     "cause when nobody's home\ni'm the king of everything\nmake the rules up on my own\ni can break em if i please\ncause i make up the police",
-    "do you ever wonder\nwhy everyone is out to get you every day\nand every night\nor do you question anything\nhow many warning signs til it hits you darling\ngravity's your friend",
+    "how many warning signs til it hits you darling\ngravity's your friend\nfall out of touch sometime\nbut your history calls you back to it again",
     "it's as hard as it looks, sometimes\nthat's as far as it gets sometimes"]
 
 /* https://stackoverflow.com/questions/53051359/javascript-random-quote-generator-how-to-have-quote-appear-as-page-first-loads */
@@ -184,7 +184,7 @@ window.onscroll = function() {scrollFunction()};
 
 function scrollFunction() {
     
-    if (document.body.scrollTop > 1 || document.documentElement.scrollTop > 1) {
+    if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
         document.getElementById("stickyhead").style.height = "20vh";
         document.getElementById("stickyhead").style.paddingTop = "4px"
 
