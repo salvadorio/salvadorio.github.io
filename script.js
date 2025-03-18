@@ -185,13 +185,16 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
     
     if (document.body.scrollTop > 0 || document.documentElement.scrollTop > 0) {
-        document.getElementById("stickyhead").style.height = "20vh";
-        document.getElementById("stickyhead").style.paddingTop = "4px"
+        // document.getElementById("stickyhead").style.height = "20vh";
+        // document.getElementById("stickyhead").style.paddingTop = "4px"
+        el = document.getElementById("stickyhead")
+        el.classList.add("addedClass")
 
     } else {
-        document.getElementById("stickyhead").style.height = "40vh";
-        document.getElementById("stickyhead").style.paddingTop = "15px";
-
+        // document.getElementById("stickyhead").style.height = "40vh";
+        // document.getElementById("stickyhead").style.paddingTop = "15px";
+        el = document.getElementById("stickyhead")
+        el.classList.remove("addedClass")
     }
 } 
 

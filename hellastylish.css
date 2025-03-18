@@ -58,7 +58,13 @@ h3 {
   height:40vh;
 
   align-items: center;
+  transition: all .3s;
 
+}
+
+.stickyhead.addedClass {
+  padding-top: 4px;
+  height:20vh;
 }
 
 .menu {
@@ -78,6 +84,11 @@ h3 {
   
 }
 .projectTitle {
+  border: 1px solid white;
+  padding: 30px;
+  margin:10px;
+}
+.rhy {
   border: 1px solid white;
   padding: 30px;
   margin:10px;
@@ -245,6 +256,7 @@ span {
   height:100%;
   flex-wrap: wrap;
   font-size:12px;
+  justify-content: center;
 }
 
 .overlay {
@@ -337,3 +349,4 @@ select {
   object-fit: cover;
   border-radius: 1vh;
 }
+
