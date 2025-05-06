@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="hellastylish.css">
+        <link rel="stylesheet" href="loopPedal.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>tbd</title>
+
+      </head>
+<body>
+
+    <div class="back">
+        <h2>
+            <a href="index.html"> &lt;--- back to main page</a>
+        </h2>
+    </div>
+
+    <div class="menu">
+        <div class="controls">
+            <h1>looper</h1>
+            <button onclick="playpause()" id="play-button" class="playpause">
+                <img src = "imgs/playpause-02.svg" class="ppimg" id="ppimg"> 
+            </button>
+            <button onclick="record()" id="record-button" class="record">
+                <img src = "imgs/playpause.svg" class="ppimg" id="ppimg"> 
+            </button>
+        </div>
+        <video id="video" class="hidden" preload="none" autoplay>
+            <source src="video.webM" type="video/webM" id="video">
+        </video>  
+        <div class="loops" id="loops">
+
+        </div>
+    </div>
+
+    <script src="loopPedal.js"></script>
+</body>
+</html>
+
