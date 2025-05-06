@@ -133,7 +133,7 @@ function wait(delayInMS) {
 
 
 function record() {
-    startRecording(((60.0/metronome.tempo)*1000.0) * metronome.beatsPerBar).then((recordedChunks) => {
+    startRecording(((60.0/metronome.tempo)*4000.0) * metronome.beatsPerBar).then((recordedChunks) => {
         let recordedBlob = new Blob(recordedChunks, { type: "video/webm" });
         var loop = document.createElement('video')
         loop.src = URL.createObjectURL(recordedBlob);
@@ -143,6 +143,7 @@ function record() {
 }
 function startRecording(lengthInMS) {
     let recorder = new MediaRecorder(stream);
+
     let data = [];
   
     recorder.ondataavailable = (event) => data.push(event.data);
